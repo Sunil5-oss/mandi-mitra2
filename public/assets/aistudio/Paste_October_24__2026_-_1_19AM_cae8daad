@@ -1,0 +1,1018 @@
+# MANDI MITRA AI
+## Complete Smart Agriculture Platform — Master Development Prompt
+
+Act as a senior Flutter developer, full-stack engineer, AI integration specialist, agricultural technology researcher, UI/UX designer, database architect, and software tester.
+
+I am developing an agriculture technology application called **Mandi Mitra AI** for Indian farmers.
+
+I already have an existing project. Your responsibility is to inspect, improve, complete, test, and deploy the existing project rather than creating an unrelated new application.
+
+The application should help farmers make better farming decisions, compare the actual financial returns from selling crops, understand agricultural risks, access reliable farming information, and discover verified agricultural products and assurance programs.
+
+The goal is to create a genuinely functional, professional, competition-ready application rather than a UI-only prototype.
+
+==================================================
+PART 1: CRITICAL PROJECT RULES
+==================================================
+
+Before writing any code:
+
+1. Inspect the complete existing project structure.
+2. Identify the actual framework, entry point, frontend, backend, database, dependencies, and current integrations.
+3. Identify all working features and all incomplete features.
+4. Inspect the existing chat assistant and identify why it is not working.
+5. Inspect the current mandi price API and identify why some requests fail or return empty data.
+6. Identify existing compilation errors and runtime errors.
+7. Check whether the project is a genuine Flutter application, a web application, or a generated preview.
+8. Determine which existing features can be reused without rewriting them.
+9. Create an implementation plan based on the actual codebase.
+
+IMPORTANT:
+
+- Do not delete the existing project.
+- Do not replace working code with a completely different application.
+- Do not remove existing functionality to simplify implementation.
+- Do not create buttons that do nothing.
+- Do not use fake live data.
+- Do not invent successful API responses.
+- Do not expose secret API keys in frontend code.
+- Do not claim a feature is complete until it has been implemented and tested.
+- Preserve the existing project name, Mandi Mitra.
+- Preserve the existing working calculations, navigation, and data integrations.
+- Use reusable components and maintainable architecture.
+- If a requested feature requires unavailable credentials, services, or external partnerships, implement the parts that can work and clearly document the remaining requirements.
+
+If the AI coding environment has limited execution time or context, divide the work into phases and continue from the existing codebase without discarding earlier work.
+
+==================================================
+PART 2: COMPLETE AGRICULTURE DASHBOARD
+==================================================
+
+Build a professional, responsive dashboard for Mandi Mitra AI.
+
+The interface should look like a modern agricultural technology platform designed for Indian farmers.
+
+Design requirements:
+
+- Professional green and golden color palette.
+- Clean typography.
+- Readable cards.
+- Consistent spacing.
+- Responsive layouts.
+- Simple Hindi and English language support.
+- Clear navigation.
+- Accessible text and controls.
+- Loading, empty, error, and success states.
+- Useful charts and visual summaries.
+- No unnecessary decorative elements.
+- No fabricated government endorsements or certification badges.
+
+The dashboard should provide access to:
+
+1. Home Dashboard.
+2. Live Mandi Prices.
+3. Smart Mandi Selling Advisor.
+4. Net Return Comparison.
+5. What-If Simulator.
+6. Explainable Selling Recommendations.
+7. AI Agriculture Chat Assistant.
+8. AI Crop Doctor.
+9. Weather and Farming Alerts.
+10. Soil Health Information.
+11. Fertilizer Calculator.
+12. Crop Information and Farming Guidance.
+13. Company Crop Assurance Marketplace.
+14. Product Registration.
+15. Crop Damage and Claim Tracking.
+16. Saved Comparisons and Selling History.
+17. Farmer Profile and Settings.
+
+Use the existing navigation if it already works. Avoid duplicate screens and unnecessary redesigns.
+
+==================================================
+PART 3: LIVE MANDI BHAV SYSTEM
+==================================================
+
+Build a functional mandi price module for Indian agricultural markets.
+
+The farmer should be able to select:
+
+- State.
+- District.
+- Mandi.
+- Crop or commodity.
+- Date or available reporting period.
+
+Support commonly traded crops such as:
+
+- Paddy.
+- Wheat.
+- Maize.
+- Bajra.
+- Mustard.
+- Potato.
+- Onion.
+- Other commodities available through the configured data source.
+
+Use an appropriate official or authoritative agricultural market data source, such as the relevant data.gov.in agricultural market records, when accessible.
+
+Requirements:
+
+1. Display the commodity name prominently.
+2. Display the mandi name.
+3. Display the state and district.
+4. Show minimum, maximum, and modal prices when available.
+5. Display the price unit.
+6. Display the reporting date.
+7. Identify the data source.
+8. Display the time the data was retrieved.
+9. Support searching and filtering.
+10. Support pagination for large result sets.
+11. Provide refresh and retry functionality.
+12. Handle missing records gracefully.
+13. Handle API rate limits and network errors.
+14. Cache recent results when appropriate.
+15. Clearly distinguish cached data from newly retrieved data.
+
+Never describe an old market record as a live real-time quote.
+
+If a mandi has no available records, explain that no data was returned rather than inventing a price.
+
+Do not expose API credentials in public frontend code.
+
+Use server-side integration or an appropriate secure architecture where necessary.
+
+==================================================
+PART 4: NET RETURN COMPARISON
+==================================================
+
+This is one of the most important features.
+
+The problem we want to solve is that farmers may compare mandi prices without considering all the expenses required to sell their crops.
+
+Build a selling comparison tool that calculates the estimated amount remaining after the entered selling costs.
+
+Inputs:
+
+- Crop name.
+- Total quantity in quintals.
+- Selling option or mandi.
+- Buyer name, if applicable.
+- Offered price per quintal.
+- Transportation costs.
+- Loading and unloading costs.
+- Labour expenses.
+- Packaging expenses.
+- Applicable commission.
+- Other selling expenses.
+- Optional additional costs.
+
+Allow the farmer to compare multiple selling options.
+
+Calculations:
+
+Gross Sale Value = Quantity × Price Per Quintal
+
+Total Expenses = Sum of All Entered Applicable Expenses
+
+Estimated Net Return = Gross Sale Value − Total Expenses
+
+Estimated Net Return Per Quintal = Estimated Net Return ÷ Quantity
+
+The interface must display:
+
+- Selling price.
+- Gross sale value.
+- Transportation expenses.
+- Other expenses.
+- Total expenses.
+- Estimated net return.
+- Estimated net return per quintal.
+- Difference compared with other selling options.
+
+Highlight the option with the highest valid estimated net return.
+
+Allow farmers to edit their assumptions and recalculate the results.
+
+Validate inputs and prevent invalid quantities, division by zero, and negative expense values where inappropriate.
+
+Avoid double-counting any expense.
+
+Clearly label results as estimates based on entered values.
+
+==================================================
+PART 5: WHAT-IF SIMULATOR
+==================================================
+
+Build an interactive simulator connected to Net Return Comparison.
+
+Its purpose is to help farmers understand how a selling decision changes when market conditions or costs change.
+
+SCENARIO A: TRANSPORT COST CHANGE
+
+Allow the farmer to increase or decrease transport costs.
+
+Examples:
+
+- Transport increases by ₹500.
+- Transport increases by 10%.
+- Transport decreases by ₹300.
+
+Recalculate the total expenses and net return immediately.
+
+Show the difference between the original and simulated results.
+
+SCENARIO B: BUYER OFFER CHANGE
+
+Allow the farmer to change the offered price per quintal.
+
+Examples:
+
+- A buyer increases the offer by ₹100 per quintal.
+- A buyer reduces the offer by ₹150 per quintal.
+- A new buyer offers a different price.
+
+Calculate the effect on gross sale value, expenses, and net return.
+
+SCENARIO C: WHAT IF THE FARMER WAITS?
+
+Allow the farmer to enter a hypothetical future selling price.
+
+Inputs:
+
+- Current selling price.
+- Hypothetical future price.
+- Expected storage costs.
+- Additional handling expenses.
+- Other applicable costs.
+
+Compare:
+
+- Estimated return if sold now.
+- Estimated return under the hypothetical future scenario.
+- Difference in estimated return.
+
+Do not pretend to predict future market prices without a real, validated forecasting system.
+
+Clearly label hypothetical future prices as user-entered assumptions.
+
+Explain that waiting can involve price uncertainty, storage risks, crop deterioration, and additional costs.
+
+SCENARIO D: MULTIPLE CHANGES
+
+Allow multiple scenario variables to change simultaneously.
+
+For example:
+
+- Transport cost increases.
+- Buyer offer decreases.
+- Storage costs increase.
+
+Display the combined effect.
+
+Provide:
+
+- Before-and-after comparison.
+- Clear calculations.
+- Interactive inputs.
+- Simple charts.
+- Reset Scenario button.
+- Save Scenario button.
+
+Keep the original baseline values separate from simulated values.
+
+==================================================
+PART 6: EXPLAINABLE SELLING RECOMMENDATION
+==================================================
+
+Build a transparent recommendation engine using the actual results of Net Return Comparison.
+
+The engine should:
+
+1. Read the farmer's entered selling options.
+2. Calculate estimated net returns.
+3. Rank valid options.
+4. Identify the option with the highest estimated net return.
+5. Explain the calculations.
+6. Show the difference from the next-best option.
+7. Identify missing information and assumptions.
+8. Update recommendations when simulation inputs change.
+
+Display a recommendation card containing:
+
+- Recommended selling option.
+- Crop name.
+- Quantity.
+- Selling price.
+- Gross sale value.
+- Total expenses.
+- Estimated net return.
+- Estimated net return per quintal.
+- Difference compared with other options.
+- Relevant assumptions.
+
+Example:
+
+"Based on your entered figures, Mandi B currently has the highest estimated net return.
+
+Gross sale value: ₹43,000.
+Transportation: ₹3,000.
+Other expenses: ₹500.
+Total expenses: ₹3,500.
+Estimated net return: ₹39,500.
+
+This is ₹1,000 more than Mandi A under the current assumptions."
+
+All example values must be labelled illustrative.
+
+Do not recommend the option with the highest mandi price automatically.
+
+Do not generate unsupported recommendations using random AI-generated scores.
+
+If two options have nearly identical returns, explain that the financial difference is small.
+
+If essential data is missing, ask the farmer to provide it.
+
+The system must not guarantee a particular selling price, buyer, or profit.
+
+==================================================
+PART 7: REAL AI AGRICULTURE CHAT ASSISTANT
+==================================================
+
+The existing chatbot is not functioning properly. Diagnose and fix it rather than merely redesigning its interface.
+
+Create a genuinely functional conversational agriculture assistant.
+
+Requirements:
+
+- Text input.
+- Working send button.
+- Actual AI-generated responses.
+- Loading indicators.
+- Error handling.
+- Retry option.
+- Conversation history.
+- Timestamps.
+- New conversation.
+- Scrollable messages.
+- Hindi support.
+- Hinglish support.
+- English support.
+- Responsive mobile and web interface.
+
+The assistant should help with:
+
+- Crop cultivation.
+- Seed selection.
+- Fertilizer usage.
+- Irrigation.
+- Crop disease information.
+- Weather-related precautions.
+- Mandi price interpretation.
+- Selling calculations.
+- Company assurance information.
+- Government agricultural schemes.
+- General farming questions.
+
+Integrate a real AI service through a secure backend.
+
+If the project already has an AI API integration, inspect and reuse it where appropriate.
+
+Do not display fabricated replies as though they came from an AI model.
+
+Never expose secret API keys in frontend code.
+
+Implement timeouts, rate-limit handling, safe error messages, and appropriate request validation.
+
+The assistant should be able to access existing application services when necessary.
+
+For example:
+
+User: "Mere paas 20 quintal makka hai. Kaunsi mandi mein zyada paisa bachega?"
+
+The assistant should request or retrieve the relevant selling prices and expenses, call the actual calculation service, and explain the result.
+
+If data is unavailable, it should ask for the missing information instead of inventing prices.
+
+The assistant must distinguish general information from verified market data.
+
+==================================================
+PART 8: AI CROP DOCTOR
+==================================================
+
+Preserve and improve the existing AI Crop Doctor.
+
+Allow farmers to:
+
+1. Upload or capture a crop or leaf photograph.
+2. Select the crop when known.
+3. Describe visible symptoms.
+4. Submit the information for analysis.
+5. Receive possible causes and practical next steps.
+
+If a real image-analysis model is integrated, use it to analyze the submitted image.
+
+Display:
+
+- Observed symptoms.
+- Possible causes.
+- Confidence information, when supported by the model.
+- Additional information needed.
+- General preventive measures.
+- Recommended next steps.
+- When to consult a qualified agricultural expert.
+
+Do not claim a disease has been definitively diagnosed if the evidence is insufficient.
+
+Do not invent chemical treatment instructions or unsupported pesticide dosages.
+
+Do not display fake AI analysis when the underlying service is unavailable.
+
+Handle image uploads securely and explain any limitations.
+
+==================================================
+PART 9: WEATHER AND FARMING ALERTS
+==================================================
+
+Build a weather and farming information module.
+
+Use a real weather API or an existing verified integration.
+
+Display, when available:
+
+- Current temperature.
+- Humidity.
+- Rainfall information.
+- Wind speed.
+- Weather forecast.
+- Relevant farming precautions.
+
+Allow the farmer to select a district or appropriate location.
+
+Show the source and update time.
+
+If the API is unavailable, display a clear error or cached information with its timestamp.
+
+Do not fabricate current weather data.
+
+Keep farming recommendations appropriately cautious and relevant to the selected crop and available forecast.
+
+==================================================
+PART 10: SOIL HEALTH AND FERTILIZER CALCULATOR
+==================================================
+
+Preserve the existing Soil Health and Fertilizer Calculator modules if present.
+
+Allow users to enter relevant soil-test information when available.
+
+Provide:
+
+- Soil parameter display.
+- Soil pH information.
+- Nutrient information where available.
+- Crop selection.
+- Fertilizer quantity calculations when sufficient inputs exist.
+- Clear assumptions.
+- Safe application guidance.
+- Missing-information warnings.
+
+Do not invent soil-test results.
+
+Do not provide precise fertilizer recommendations without the necessary information.
+
+Keep calculations separate from AI-generated explanations.
+
+==================================================
+PART 11: COMPANY CROP ASSURANCE MARKETPLACE
+==================================================
+
+This is another major innovation goal.
+
+Create a section called:
+
+"Company Crop Assurance"
+
+The purpose is to help farmers discover documented crop-related product warranties, seed replacement policies, fertilizer product guarantees, agricultural insurance, and genuine crop-loss compensation programs.
+
+The system must distinguish between a company offering a product warranty and a company agreeing to compensate a farmer for an entire failed crop.
+
+Do not assume that any company guarantees 100% reimbursement.
+
+A. COMPANY DIRECTORY
+
+Support categories such as:
+
+- Seed companies.
+- Fertilizer companies.
+- Crop protection product companies.
+- Agricultural input suppliers.
+- Agricultural insurance providers.
+- Other relevant agricultural protection programs.
+
+Display:
+
+- Company name.
+- Company category.
+- Official website.
+- Products covered.
+- Supported crops.
+- Applicable regions.
+- Program name.
+- Policy source.
+- Eligibility requirements.
+- Coverage limits.
+- Exclusions.
+- Required documents.
+- Claim deadlines.
+- Compensation calculation method, if documented.
+- Policy validity.
+- Last verification date.
+- Verification status.
+
+Provide search, filtering, and sorting.
+
+Allow farmers to filter by crop, location, product, and assurance type.
+
+B. VERIFIED COMPANY INFORMATION
+
+Use authoritative sources, official policy documents, and documented agreements.
+
+Support these verification statuses:
+
+- Verified.
+- Pending Verification.
+- Unverified.
+- Expired.
+- Disputed.
+
+Never present an unverified offer as an official company guarantee.
+
+Do not invent company partnerships, compensation policies, insurance benefits, or official endorsements.
+
+If verified data is unavailable, use clearly labelled sample records for development only.
+
+Do not mix sample records with verified commercial offers.
+
+C. ASSURANCE TYPES
+
+Support:
+
+- Seed replacement warranties.
+- Product refund policies.
+- Germination-related guarantees where documented.
+- Crop-loss compensation programs where documented.
+- Agricultural insurance.
+- Other genuine product-specific protection programs.
+
+Clearly explain what each program covers.
+
+A product warranty must not be described as whole-crop insurance unless its documented terms support that claim.
+
+D. FARMER PRODUCT REGISTRATION
+
+Allow farmers to save:
+
+- Company.
+- Product name.
+- Product category.
+- Crop.
+- Purchase date.
+- Quantity.
+- Batch number, if applicable.
+- Invoice.
+- Applicable assurance program.
+
+Store records securely.
+
+Ask for consent before collecting or sharing personal information.
+
+E. CROP DAMAGE AND CLAIM TRACKING
+
+Allow farmers to:
+
+1. Select a registered product.
+2. Select an applicable assurance program.
+3. Describe the crop damage.
+4. Enter the date damage was observed.
+5. Upload photographs.
+6. Upload invoices.
+7. Review eligibility requirements.
+8. Submit a claim through a supported workflow.
+9. Track the claim status.
+
+Suggested statuses:
+
+- Draft.
+- Submitted.
+- Under Review.
+- Additional Information Required.
+- Inspection Pending.
+- Approved.
+- Rejected.
+- Paid.
+- Closed.
+
+Distinguish between a claim saved in Mandi Mitra and a claim formally received by the company.
+
+If no company API exists, provide the verified official claim submission process or contact information when available.
+
+Do not claim that an external company has received, approved, or paid a claim without confirmation.
+
+F. COMPENSATION ELIGIBILITY ESTIMATOR
+
+Build a transparent eligibility estimator.
+
+Display:
+
+- Potential eligibility.
+- Applicable policy conditions.
+- Missing documents.
+- Exclusions.
+- Maximum documented coverage.
+- Estimated compensation, if the documented formula and required inputs are available.
+- Official claim submission instructions.
+
+Possible results:
+
+- Potentially Eligible.
+- More Information Required.
+- Appears Ineligible Under Entered Conditions.
+- Manual Verification Required.
+
+Clearly explain that the result is an estimate, not an official claim decision.
+
+Do not fabricate compensation amounts or guarantee payment.
+
+G. COMPANY COMPARISON
+
+Allow farmers to compare assurance programs by:
+
+- Products covered.
+- Crop eligibility.
+- Geographic eligibility.
+- Coverage type.
+- Maximum documented benefit.
+- Conditions.
+- Claim deadline.
+- Required documents.
+- Exclusions.
+- Verification status.
+
+Rank or sort using transparent criteria.
+
+Do not automatically recommend a company simply because it advertises a larger benefit.
+
+==================================================
+PART 12: SAVED COMPARISONS AND FARMER HISTORY
+==================================================
+
+Allow authenticated farmers to save:
+
+- Selling comparisons.
+- What-If scenarios.
+- Recommendation results.
+- Crop Doctor reports, where appropriate.
+- Registered agricultural products.
+- Claim records.
+
+Provide a history screen with:
+
+- Date.
+- Crop.
+- Quantity.
+- Selling options.
+- Estimated net return.
+- Saved scenario.
+- Relevant status.
+
+Allow farmers to reopen and edit saved comparisons.
+
+Enforce user-level access controls.
+
+Farmers must not be able to access another farmer's private records.
+
+Do not store sensitive data unnecessarily.
+
+==================================================
+PART 13: FARMER PROFILE AND LANGUAGE
+==================================================
+
+Create or preserve the farmer profile system.
+
+Support:
+
+- Name.
+- Preferred language.
+- State.
+- District.
+- Optional farming details.
+- Preferred crops.
+- Relevant saved preferences.
+
+Collect only the information required by the application.
+
+Support Hindi and English, with useful Hinglish explanations where appropriate.
+
+Use simple language and clear terminology.
+
+Allow users to update their preferences.
+
+Never expose personal data publicly.
+
+==================================================
+PART 14: DATABASE AND BACKEND
+==================================================
+
+Inspect and reuse the existing backend and database wherever possible.
+
+Use a maintainable architecture with appropriate separation between:
+
+- User interface.
+- State management.
+- Business logic.
+- Data models.
+- API services.
+- Database operations.
+- Authentication.
+- AI integrations.
+
+Create or update the required models for:
+
+- Farmers.
+- Chat conversations.
+- Chat messages.
+- Mandi records.
+- Selling options.
+- Expenses.
+- Saved comparisons.
+- What-If scenarios.
+- Recommendations.
+- Company profiles.
+- Assurance programs.
+- Product registrations.
+- Claims.
+- Verification records.
+
+Use secure access controls and appropriate database migrations.
+
+Never expose private credentials in the public frontend or GitHub repository.
+
+Do not introduce an unnecessary new backend if the existing backend already supports the required functionality.
+
+If a new service is genuinely necessary, explain why and document its configuration.
+
+==================================================
+PART 15: ADMINISTRATION AND VERIFICATION
+==================================================
+
+If compatible with the existing architecture, provide an authorized administrative workflow for:
+
+- Managing company records.
+- Updating assurance policies.
+- Reviewing source documents.
+- Approving verification requests.
+- Marking expired programs.
+- Reviewing claim records where authorized.
+- Updating claim status.
+- Maintaining an audit trail.
+
+Use backend-enforced role-based access control.
+
+Do not rely only on hiding administrative buttons in the UI.
+
+Never allow ordinary users to mark their own company as verified.
+
+==================================================
+PART 16: FLUTTER WEB, ANDROID, AND DEPLOYMENT
+==================================================
+
+The existing project should remain compatible with its supported platforms.
+
+If it is a Flutter project, preserve Flutter and Dart as the primary implementation technologies.
+
+Verify:
+
+- Android build.
+- Flutter Web build.
+- Responsive web interface.
+- Existing API integrations.
+- Navigation.
+- Data persistence.
+- Chat functionality.
+- Selling calculations.
+- What-If simulation.
+- Recommendation updates.
+- Company directory.
+- Product registration.
+- Claim workflows.
+
+If the current repository does not support a requested platform, identify the missing configuration rather than claiming support.
+
+Prepare the web build for deployment.
+
+For Flutter Web, verify the build output and ensure that client-side navigation works after refreshing a page.
+
+If Netlify is the existing hosting provider, preserve the existing deployment configuration where possible.
+
+Use a suitable build environment that has Flutter installed.
+
+Do not publish API secrets in build artifacts.
+
+After successful deployment, provide the actual production URL only when it is available and verified.
+
+==================================================
+PART 17: TESTING AND QUALITY ASSURANCE
+==================================================
+
+Before considering the project complete, run the available checks.
+
+A. CODE QUALITY
+
+- Resolve compilation errors introduced by the changes.
+- Check dependencies.
+- Verify imports.
+- Check for broken navigation.
+- Check for null-safety problems.
+- Check API response parsing.
+- Check state updates.
+
+B. CALCULATION TESTS
+
+Test:
+
+- Multiple selling options.
+- Different transport costs.
+- Buyer offer changes.
+- Hypothetical future prices.
+- Additional storage expenses.
+- Equal net returns.
+- Negative net returns.
+- Invalid quantities.
+- Missing prices.
+- Zero quantity.
+- Recommendation changes after simulation.
+
+C. CHAT TESTS
+
+Verify:
+
+- Actual AI requests and responses.
+- Loading states.
+- Network failures.
+- Rate limits.
+- Retry handling.
+- Conversation history.
+- Secure API configuration.
+
+D. COMPANY ASSURANCE TESTS
+
+Verify:
+
+- Correct verification statuses.
+- Expired policy handling.
+- Document uploads.
+- Product registration.
+- Claim status history.
+- User-level privacy.
+- Eligibility calculations.
+- Missing policy information.
+- No fabricated company guarantees.
+
+E. WEB TESTS
+
+Verify:
+
+- Responsive layouts.
+- Working navigation.
+- No broken buttons.
+- No critical browser console errors.
+- Correct API error messages.
+- Working refresh and routing.
+- Successful production build.
+
+Do not claim all tests passed unless they were actually run.
+
+==================================================
+PART 18: IMPLEMENTATION PHASES
+==================================================
+
+Complete the work in the following order.
+
+PHASE 1 — PROJECT AUDIT
+
+Inspect the current codebase.
+
+Identify the framework, entry points, current features, errors, APIs, and missing configuration.
+
+Return a concise implementation plan.
+
+PHASE 2 — EXISTING FUNCTIONALITY
+
+Fix broken existing features before introducing unnecessary changes.
+
+Preserve live mandi prices, current calculations, navigation, and existing working modules.
+
+PHASE 3 — SELLING DECISION SYSTEM
+
+Complete Net Return Comparison.
+
+Complete the What-If Simulator.
+
+Complete Explainable Selling Recommendations.
+
+Connect all three modules to the same consistent calculation logic.
+
+PHASE 4 — REAL AI CHAT
+
+Diagnose and fix the existing chatbot.
+
+Implement secure AI integration and test actual responses.
+
+PHASE 5 — COMPANY CROP ASSURANCE
+
+Build the company directory, verification workflow, assurance details, product registration, eligibility estimator, and claim tracking.
+
+Clearly distinguish verified records from sample data.
+
+PHASE 6 — OTHER AGRICULTURE FEATURES
+
+Improve the Crop Doctor, weather module, soil information, fertilizer calculator, and farmer history without breaking existing functionality.
+
+PHASE 7 — TESTING
+
+Run compilation checks, unit tests, integration tests, and browser tests where supported.
+
+Resolve critical errors before deployment.
+
+PHASE 8 — DEPLOYMENT
+
+Prepare the production build.
+
+Deploy using the existing hosting setup.
+
+Verify the actual public demo.
+
+Document all remaining external dependencies and limitations.
+
+If the execution environment cannot complete every phase in one run, finish the current phase properly, save the work, and continue with the next phase from the existing project.
+
+Do not silently skip unfinished phases.
+
+==================================================
+PART 19: FINAL DELIVERABLES
+==================================================
+
+At the end of implementation, provide:
+
+1. A summary of the project changes.
+2. A list of modified files.
+3. A list of newly created files.
+4. Required environment variables and configuration.
+5. Database changes and migration instructions.
+6. API setup instructions.
+7. Results of actual tests.
+8. Known limitations.
+9. Any features still requiring credentials or external partnerships.
+10. Instructions to run the project locally.
+11. Instructions to build Flutter Web.
+12. Deployment instructions.
+13. The production demo URL, if successfully deployed.
+14. A demonstration workflow for hackathon judges.
+
+The demonstration should show:
+
+- Selecting a crop.
+- Comparing two selling options.
+- Calculating estimated net returns.
+- Increasing transport costs.
+- Observing the changed result.
+- Viewing the explainable recommendation.
+- Asking the AI agriculture assistant a question.
+- Browsing a documented company assurance program.
+- Viewing its eligibility conditions.
+- Demonstrating product registration or a clearly labelled sample claim workflow.
+
+==================================================
+FINAL PRODUCT VISION
+==================================================
+
+Mandi Mitra AI should help farmers answer these questions:
+
+1. What is the reported market price for my crop?
+2. How much money will remain after my selling expenses?
+3. How would my earnings change if transport costs or buyer offers changed?
+4. Which selling option currently has the highest estimated net return?
+5. Why is that option recommended?
+6. Where can I obtain reliable agricultural information?
+7. What might be affecting my crop?
+8. Which documented company warranties or compensation programs apply to my products?
+9. What documents and conditions are required for a claim?
+10. How can I save and review my previous decisions?
+
+The application must prioritize real functionality, transparent calculations, verified information, secure data handling, and a clear farmer-focused experience.
+
+Do not prioritize the number of features over the reliability of the features.
+
+Start by inspecting the existing project. Then implement the changes in the phases described above.
+
+Do not replace the existing application with a static mockup.

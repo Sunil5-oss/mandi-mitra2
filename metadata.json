@@ -1,0 +1,6 @@
+{
+  "name": "Mandi Mitra AI",
+  "description": "Smart agriculture platform for Indian farmers featuring live mandi bhav, net return calculator, what-if simulator, AI crop doctor & assistant, and company crop assurance marketplace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
